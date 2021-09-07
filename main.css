@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px;
+  font-family: Arial sans-serif; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+#test {
+  font-size: 2rem; }
+
+#game {
+  padding: 2rem 0.5rem 2rem 0.5rem;
+  position: relative;
+  max-width: 1000px;
+  min-width: 320px;
+  min-height: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 3px solid indianred;
+  background-color: #c7f593; }
+  #game .game-menu {
+    display: none;
+    flex-direction: column;
+    padding: 3rem 0 3rem 0;
+    row-gap: 3rem; }
+    #game .game-menu__btn {
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border: 0.5rem solid green;
+      background-color: greenyellow;
+      border-radius: 4rem;
+      outline: none; }
+      #game .game-menu__btn:hover {
+        color: white;
+        cursor: pointer;
+        background-color: indianred; }
+  #game .game-main {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem; }
+    #game .game-main .game-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 3rem; }
+      @media screen and (max-width: 600px) {
+        #game .game-main .game-header {
+          flex-direction: column;
+          justify-content: center;
+          row-gap: 1rem; } }
+      #game .game-main .game-header .game-steps {
+        font-weight: 500;
+        color: indianred; }
+      #game .game-main .game-header .btn-restart {
+        width: 6rem;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        border: 0.5rem solid green;
+        background-color: greenyellow;
+        border-radius: 50%;
+        outline: none;
+        padding-bottom: 0.7rem;
+        transform: rotate(90deg); }
+        #game .game-main .game-header .btn-restart:hover {
+          color: white;
+          cursor: pointer;
+          background-color: indianred; }
+    #game .game-main .game-playfield {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      margin: 0 0 4rem 0; }
+      #game .game-main .game-playfield .number-block-outer {
+        transition: 0.2s;
+        background-color: transparent;
+        overflow: hidden; }
+        #game .game-main .game-playfield .number-block-outer .number-block {
+          display: block;
+          font-family: Arial;
+          background-color: greenyellow; }
+          #game .game-main .game-playfield .number-block-outer .number-block:hover {
+            color: white;
+            cursor: pointer;
+            background-color: indianred; }
+          #game .game-main .game-playfield .number-block-outer .number-block.empty {
+            opacity: 0;
+            border: none;
+            background-color: transparent;
+            border-radius: none; }
+            #game .game-main .game-playfield .number-block-outer .number-block.empty:hover {
+              cursor: default; }
+  #game .game-records {
+    width: 100%;
+    min-height: 600px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 5rem; }
+    #game .game-records .records-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      align-items: center;
+      justify-content: flex-start; }
+    #game .game-records .records-table {
+      width: 100%;
+      min-width: 320px;
+      border: 1px solid indianred;
+      border-collapse: collapse;
+      font-size: 3rem; }
+      #game .game-records .records-table td,
+      #game .game-records .records-table th {
+        border: 1px solid indianred;
+        text-align: center;
+        padding: 0.25rem; }
+  #game .game-options {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 5rem;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: 700; }
+    #game .game-options .game-mode {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem; }
+      @media screen and (max-width: 426px) {
+        #game .game-options .game-mode span {
+          font-size: 2.5rem; }
+        #game .game-options .game-mode .mode-select {
+          font-size: 2rem; } }
+    #game .game-options .mode-select {
+      font-size: 3rem;
+      font-weight: 700;
+      padding: 1rem;
+      outline: none;
+      border: 0.2rem solid green;
+      background-color: yellowgreen;
+      border-radius: 1rem; }
+      #game .game-options .mode-select option {
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 700; }
+        #game .game-options .mode-select option:hover {
+          color: white;
+          cursor: pointer;
+          background-color: indianred; }
+      #game .game-options .mode-select:hover {
+        cursor: pointer; }
+    #game .game-options .game-sound {
+      display: flex;
+      justify-content: center;
+      column-gap: 2rem;
+      align-items: center; }
+      #game .game-options .game-sound .sound-select {
+        opacity: 0.5;
+        width: 4rem;
+        height: 4rem; }
+      @media screen and (max-width: 426px) {
+        #game .game-options .game-sound span {
+          font-size: 2.5rem; }
+        #game .game-options .game-sound .sound-select {
+          opacity: 0.5;
+          width: 2rem;
+          height: 2rem; } }
+    #game .game-options .game-images {
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px; }
+      #game .game-options .game-images .btn-image {
+        width: 6rem;
+        height: 6rem;
+        font-size: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.5rem solid green;
+        background-color: greenyellow;
+        border-radius: 50%;
+        outline: none;
+        user-select: none; }
+        #game .game-options .game-images .btn-image.image-right {
+          padding: 0 0.3rem 0.5rem 0; }
+        #game .game-options .game-images .btn-image.image-left {
+          padding: 0 0 0.5rem 0.3rem; }
+        #game .game-options .game-images .btn-image:hover {
+          color: white;
+          cursor: pointer;
+          background-color: indianred; }
+      #game .game-options .game-images .game-image {
+        width: 250px;
+        height: 250px;
+        object-fit: fill;
+        object-position: center; }
+      @media screen and (max-width: 426px) {
+        #game .game-options .game-images .game-image {
+          width: 200px;
+          height: 200px; }
+        #game .game-options .game-images .btn-image {
+          width: 4rem;
+          height: 4rem;
+          font-size: 2rem; }
+          #game .game-options .game-images .btn-image.image-right {
+            padding: 0 0.2rem 0.4rem 0; }
+          #game .game-options .game-images .btn-image.image-left {
+            padding: 0 0 0.4rem 0.2rem; } }
+  #game .game-save {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 4rem;
+    color: indianred;
+    display: none;
+    justify-content: center;
+    align-items: center; }
+    #game .game-save-content {
+      position: relative;
+      z-index: 20;
+      min-width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      row-gap: 3rem;
+      border: 0.5rem solid green;
+      background-color: greenyellow;
+      border-radius: 2rem; }
+      #game .game-save-content #nickname {
+        width: 90%;
+        font-weight: 600;
+        color: white;
+        font-size: 4rem;
+        outline: none;
+        border: none;
+        border-bottom: 3px solid indianred;
+        background-color: greenyellow; }
+    @media screen and (max-width: 1024px) {
+      #game .game-save-content {
+        width: 90%;
+        font-weight: 1.6rem; }
+        #game .game-save-content div {
+          text-align: center; }
+        #game .game-save-content #nickname {
+          font-size: 2rem; } }
